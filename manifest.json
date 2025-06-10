@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "My Extension",
+    "version": "1.0",
+    "permissions": [
+        "webRequest",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "*://*.canva.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.canva.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
